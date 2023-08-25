@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(TextModel::class, 'files_texts_users', 'user_id', 'text_id');
     }
+
+    public function files()
+    {
+        return $this->belongsToMany(File::class, 'files_texts_users', 'user_id', 'file_id');
+    }
 }

@@ -21,7 +21,7 @@
         <h2 class="display-5">Сохранненые файлы</h2>
         </div>
 
-    @foreach ($all_files as $files)
+    @foreach ($userFiles as $files)
 
     <form class="files mb-4 ">
         <a href="{{ route('file.download', $files->id) }}" class="blockquote" title="
@@ -31,12 +31,14 @@
             Дата обновления файла: {{ $files->updated_at }}">{{$files->name }}</a>
     </form>
     @endforeach
-    <div>{{ $all_files->links()}}</div>
+
+    <div>{{ $userFiles->links()}}</div>
+
     <script type="text/javascript">
         Dropzone.options.dropzone =
                 {
                     dictDefaultMessage: "Выберите файл для загрузки или перетащите его",
-                    maxFilesize: 1000,
+                    maxFilesize: 6000000000,
                     maxFiles: 10,
                     acceptedFiles: "",
                     addRemoveLinks: true,

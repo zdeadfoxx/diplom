@@ -11,7 +11,7 @@ class TextController extends Controller
 {
     public function index(){
         $user = auth()->user();
-        $userTexts = $user->texts()->paginate(12);
+        $userTexts = $user->texts()->paginate(7);
         return view('text.index', compact('userTexts'));
     }
 

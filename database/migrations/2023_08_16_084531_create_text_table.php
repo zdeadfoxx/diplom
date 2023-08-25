@@ -15,11 +15,8 @@ class CreateTextTable extends Migration
     {
         Schema::create('texts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable(); // Добавьте этот столбец
             $table->string('text')->nullable();
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
