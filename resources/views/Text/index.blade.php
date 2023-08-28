@@ -1,7 +1,9 @@
 @extends('layouts.base')
 @section('content')
+@section('title', 'Текст')
 
 <div class="container d-flex flex-column min-vh-100 ">
+
     <form class="" action="{{ route('text.store','$all_text->id') }}" method="post">
         @csrf
         <div class="form-group">
@@ -38,6 +40,7 @@
       @endforeach
     <div>{{ $userTexts->links() }}</div>
 
+    
 
 </div>
 

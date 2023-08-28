@@ -1,7 +1,6 @@
 @extends('layouts.base')
 @section('content')
-@extends('layouts.base')
-@section('content')
+@section('title', 'Изменить текст')
 
 <div class="container">
 

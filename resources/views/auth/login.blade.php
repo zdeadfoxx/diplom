@@ -3,12 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-8 ">
+            <div class="card login__form">
                 <div class="card-header">{{ __('Вход') }}</div>
-
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" class="">
                         @csrf
 
                         <div class="row mb-3">
@@ -27,7 +26,6 @@
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Пароль') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
@@ -36,6 +34,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+
                             </div>
                         </div>
 
@@ -43,7 +42,6 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
                                     <label class="form-check-label" for="remember">
                                         {{ __('Запомнить меня!') }}
                                     </label>
@@ -51,48 +49,22 @@
                             </div>
                         </div>
 
-                                <div class="row justify-content-md-center">
-                                 <div class="col col-lg-1">
-                                    <button type="submit" class="btn btn-primary btn-dark">
-                                        {{ __('Войти') }}
-                                    </button>
-                                 </div>
-                                    <div class="col-md-auto">
+                        <div class="row justify-content-md-center">
+                            <div class="col col-lg-1">
+                            <button type="submit" class="btn btn-primary btn-dark">
+                                {{ __('Войти') }}
+                            </button>
+                        </div>
 
-                                       <a class="btn btn-primary btn-dark" href="{{ Route('register') }}">{{ __('Зарегистрироваться') }}</a>
-
-                                    </div>
-                                    <div class="col col-lg-1">
-                                        @if (Route::has('password.request'))
-                                            <a class="btn btn-link col-sm" href="{{ route('password.request') }}"> {{ __('Забыли пароль?') }} </a>
-                                        @endif
-                                    </div>
-                                </div>
-
-
-
-
-                        {{-- <div class="row mb-0">
-                            <div class=" offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Войти') }}
-                                </button>
-                                <div class="">
-                                    <div class="offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            {{ __('Register') }}
-                                        </button>
-                                    </div>
-                                </div>
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Забыли пароль?') }}
-                                    </a>
-                                @endif
-
-                            </div>
-                        </div> --}}
-
+                        <div class="col-md-auto">
+                            <a class="btn btn-primary btn-dark" href="{{ Route('register') }}">{{ __('Зарегистрироваться') }}</a>
+                        </div>
+                        <div class="col col-lg-1">
+                            @if (Route::has('password.request'))
+                                <a class="btn btn-link col-sm" href="{{ route('password.request') }}"> {{ __('Забыли пароль?') }} </a>
+                            @endif
+                        </div>
+                        </div>
                     </form>
                 </div>
             </div>

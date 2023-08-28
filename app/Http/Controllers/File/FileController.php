@@ -48,7 +48,7 @@ class FileController extends Controller
     $user->files()->attach($fileModel->id);
 
     try {
-        return redirect()->route('file.index');
+        return response()->json(['success' => true, 'payload' => 'My message']);
     } catch (\Exception $e) {
         // Обработка ошибки, например, возврат сообщения об ошибке
         return redirect()->back()->with('error', 'Ошибка при сохранении файла');
@@ -62,5 +62,13 @@ class FileController extends Controller
        $path = Storage::path("public/$files->file_path");
        return response()->download($path);
     }
+
+    public function delete($id) {
+        $userFiles = FileModel::findOrFail($id);
+        auth()->user()->files()->detach($userFiles->id);
+        $userFiles->delete();
+        return redirect()->route('file.index', compact('userFiles'));
+    }
+
 
 }

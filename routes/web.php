@@ -21,6 +21,9 @@ Route::controller(FileController::class)->group(Function() {
     Route::get('files/download/{id}','download')->
     name('file.download');
 
+    Route::delete('files/{id}','delete')->
+    name('file.delete');
+
 });
 
 

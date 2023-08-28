@@ -1,5 +1,6 @@
 @extends('layouts.base')
 @section('content')
+@section('title', 'Изменить Текст')
 <div class="container">
 
     <form action="{{ route('text.update', $find_text->id) }}" method="post">
