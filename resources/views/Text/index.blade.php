@@ -1,10 +1,8 @@
 @extends('layouts.base')
 @section('content')
-@section('title', 'Текст')
 
 <div class="container d-flex flex-column min-vh-100 ">
-
-    <form class="" action="{{ route('text.store','$all_text->id') }}" method="post">
+    <form class="" action="{{ route('text.store') }}" method="post">
         @csrf
         <div class="form-group">
         <label for="text">{{ __('Текст') }}</label>
@@ -32,15 +30,57 @@
                   <form action="{{ route('text.delete',$text->id) }}" method="post">
                   @csrf
                   @method('delete')
-                  <button class="btn btn-primary  btn-dark" type="submit">{{ __('Удалить') }}</button>
+                  <a href="#" class="delete-text btn btn-primary  btn-dark" data-file-id="{{$text->id }} " >Удалить текст</a>
+                  {{-- <button class="btn btn-primary  btn-dark" type="submit">{{ __('Удалить') }}</button> --}}
                   </form>
               </div>
           </div>
         </div>
+
+        <div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Подтвердите удаление текста</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Вы уверены, что хотите удалить этот текст?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+
+                        <form action="{{ route('text.delete',$text->id) }}" method="post" class="mb-4 ">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-primary  btn-danger" type="submit">{{ __('Удалить') }}</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
       @endforeach
     <div>{{ $userTexts->links() }}</div>
+    <script>
+        $(document).ready(function() {
+            var textIdToDelete;
 
-    
+            $('.delete-text').on('click', function(e) {
+                e.preventDefault();
+                textIdToDelete = $(this).data('text-id');
+                $('#deleteModal').modal('show');
+            });
+
+            $('#confirmDeleteText').on('click', function() {
+                $('#deleteModal').modal('hide');
+                deleteText(textIdToDelete);
+            });
+
+        });
+    </script>
 
 </div>
 

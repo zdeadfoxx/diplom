@@ -56,12 +56,12 @@ class TextController extends Controller
     }
 
     public function delete($id){
-        $find_text = TextModel::findOrFail($id);
+        $userTexts = TextModel::findOrFail($id);
 
         // Разрываем связи с пользователями через смежную таблицу
-        auth()->user()->texts()->detach($find_text->id);
+        auth()->user()->texts()->detach($userTexts->id);
 
-        $find_text->delete(); // Удаляем запись из таблицы texts
+        $userTexts->delete(); // Удаляем запись из таблицы texts
         return redirect()->route('text.index');
     }
 }
