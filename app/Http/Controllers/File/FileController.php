@@ -16,7 +16,7 @@ class FileController extends Controller
 {
     public function index(){
         $user = auth()->user();
-        $userFiles = $user->files()->paginate(13);
+        $userFiles = $user->files()->paginate(7);
         return view('file.index', compact('userFiles'));
     }
 

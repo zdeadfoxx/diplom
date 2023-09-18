@@ -49,21 +49,18 @@
                             </div>
                         </div>
 
-                        <div class="row justify-content-md-center">
-                            <div class="col col-lg-1">
-                            <button type="submit" class="btn btn-primary btn-dark">
-                                {{ __('Войти') }}
-                            </button>
-                        </div>
 
-                        <div class="col-md-auto">
-                            <a class="btn btn-primary btn-dark" href="{{ Route('register') }}">{{ __('Зарегистрироваться') }}</a>
-                        </div>
-                        <div class="col col-lg-1">
-                            @if (Route::has('password.request'))
-                                <a class="btn btn-link col-sm" href="{{ route('password.request') }}"> {{ __('Забыли пароль?') }} </a>
-                            @endif
-                        </div>
+
+                        <div class="row mb-3 d-flex justify-content-start">
+                                <div class="btn__register col-md-4">
+                                <button type="submit" class="btn btn-primary col-sm mb-4">
+                                    {{ __('Войти') }}
+                                </button>
+                            </div>
+                                <div class="btn__register col-md-4">
+                                <a class="btn btn-primary col-sm"href="{{ Route('register') }}">{{ __('Зарегистрироваться') }}</a>
+                                </div>
+
                         </div>
                     </form>
                 </div>

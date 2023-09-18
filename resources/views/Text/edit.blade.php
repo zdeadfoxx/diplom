@@ -1,20 +1,19 @@
 @extends('layouts.base')
 @section('content')
-@section('title', 'Изменить Текст')
+@section('title', 'Изменить текст')
 <div class="container">
-
+  <h2>{{ __('Сохраненый текст') }}</h2>
     <form action="{{ route('text.update', $find_text->id) }}" method="post">
 
         @csrf
         @method('put')
 
         <div class="form-group">
-            <label for="text">{{ __('Текст') }}</label>
 
-            <input type="text" class="form-control mb-3" id="text" name="text" value="{{ $find_text->text }}" required maxlength="255">
-           <!-- <textarea name="text" class="form-control mb-3" value="{{ $find_text->text }}" maxlength="254" required rows="15" cols="30"></textarea>-->
+             {{-- <input type="text"  class="form-control mb-3"  id="text" name="text" placeholder="{{ __('Введите текст') }}" maxlength="255" required> --}}
+       <textarea name="text" class="form-control mb-3" placeholder="{{ __('Введите текст') }}" maxlength="555" required rows="3" cols="33">{{$find_text->text}}</textarea>
         </div>
-            <button type="submit" class="btn btn-primary mb-3  btn-dark"> {{ __('Обновить') }}</button>
+            <button type="submit" class="btn btn-primary mb-3 "> {{ __('Обновить') }}</button>
     </form>
 
     <div class="card mt-3" style="">
@@ -28,7 +27,7 @@
         </div>
         </div>
         <div class="button__back">
-            <a  class="btn btn-primary  ms-3 mb-3  btn-dark" href="{{ route('text.index') }}">{{ __('Назад') }}</a>
+            <a  class="btn btn-primary  ms-3 mb-3 " href="{{ route('text.index') }}">{{ __('Назад') }}</a>
         </div>
     </div>
 </div>

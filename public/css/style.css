@@ -1,0 +1,174 @@
+  @import url('auth__css/asuth.css');
+
+  body{
+            font-size: 28px;
+        }
+        img{
+            width: 250px;
+            height: 250px;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        input{
+            font-size: 20px;
+        }
+        /*Header*/
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+        }
+        .link{
+                font-size: 26px;
+                margin-right: 15px;
+                color: gray;
+        }
+        .link:hover{
+            color: gray;
+        }
+        .header__body{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        /*Main*/
+        .paginate__links{
+            margin-top: 20px
+        }
+        .burrger__menu{
+            display: flex;
+            flex-direction: column;
+        }
+        .burrger__menu span{
+            width: 1px;
+            background-color: #000000;
+            height: 1px;
+        }
+        .btn__all{
+        	display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            border: 1px solid transparent;
+            padding: 6px;
+            font-size: 1rem;
+            border-radius: .25rem;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+        }
+        .btn__all:hover{
+            background-color: #0069D9;
+            text-decoration: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        /*Text*/
+        .button__savedtext{
+            display: flex;
+            padding: 10px;
+        }
+        .button__change{
+            margin-right: 10px;
+        }
+        .copy__text{
+            margin-right: 10px;
+        }
+
+    .message__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        z-index: 9999;
+    }
+
+    .textshow {
+        max-width: 100px;
+        border-radius: 10px;
+        background-color: #007bff;
+        opacity: 0.6;
+        color: #fff;
+        padding: 15px;
+    }
+
+    .saved__text{
+        font-size: 20px;
+    }
+        /*File*/
+        .dropzone__choice{
+            font-weight: bold;
+        }
+
+        .files:hover{
+            color: #000000;
+            opacity: 0.5;
+        }
+
+        .files__link{
+            font-size: 24px;
+        }
+        .files{
+            margin-top:10px;
+        }
+        /*Footer*/
+
+        .footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .footer__body{
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*Breakpoints*/
+
+        @media (max-width: 1399.98px) { }
+
+        @media (max-width: 1199.98px) {
+
+         }
+
+        @media (max-width: 991.98px) {
+            .btn__register{
+                margin-left: 0px;
+                width: 100%;
+                }
+                .btn__login a{
+                    width: 100%;
+                }
+                .btn__login-register{
+                    margin-left: 0px;
+                    width: 100%;
+                    text-align: center;
+                }
+                .btn__login-register button{
+                    width: 100%;
+                }
+                .btn__login-login button{
+                    text-align: center;
+                    width: 100%;
+                }
+                .button__savedtext{
+                    display: flex;
+                    flex-direction: column;
+                }
+                .copy__button{
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+         }
+        @media (max-width: 767.98px) {  }
+
+        @media (max-width: 575.98px) {  }

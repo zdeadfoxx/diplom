@@ -51,6 +51,7 @@ class TextController extends Controller
         $data = request()->validate([
             'text'=> 'string'
         ]);
+
         $find_text->update($data);
         return redirect()->route('text.index', ['text' => $find_text->id]);
     }

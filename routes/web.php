@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::redirect('/', '/home');
 
+
+
 Auth::routes();
 
 Route::controller(FileController::class)->group(Function() {
@@ -49,6 +51,7 @@ Route::controller(TextController::class)->group(function () {
     Route::delete('texts/{text}',[TextController::class,'delete'])->
     name('text.delete');
 });
+
 Route::post('/upload', 'UploadController@upload')->name('upload');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->
 name('home');

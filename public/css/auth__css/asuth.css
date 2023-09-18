@@ -1,0 +1,13 @@
+.login__form{
+    margin-top: 250px;
+}
+.btn__register{
+    margin-left: 300px;
+}
+.btn__login-register button{
+    margin-right: 50px;
+}
+.btn__form{
+    align-items: center;
+   text-align: center;
+}
